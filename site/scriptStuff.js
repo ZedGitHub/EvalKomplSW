@@ -43,7 +43,7 @@ function training(){
     gesundheit = gesundheit - entwicklungsGesundheitsReducer; 
 }
 
-function gehaltAendern(var aenderung){
+function gehaltAendern(aenderung){
     checkGesundheit();
     if(aenderung < 0){
 	motivation = motivation - sinkendesGehaltMotivationsReducer;
