@@ -1,8 +1,6 @@
-geldArray =[10, 9, 7.6, 10, 10, 10, 10, 10, 10, null];
-qualitaetsArray =[0, 1, 2, 3, 4.5, 5.7, 7.9, 8, 9, 10];
+geldArray =[ null, null, null, null, null, null, null, null, null, null];
+qualitaetsArray =[null, null, null, null, null, null, null, null, null, null];
 
-
-initializeChart();
 
 function initializeChart() {
     qualitaetsArrayErweitern();
@@ -56,10 +54,10 @@ function initializeChart() {
     });
 };
 
-function qualitaetsArrayErweitern(qualitaet) {
+function qualitaetsArrayErweitern() {
     qualitaetsArray[zeit] = qualitaet;
 };
 
-function geldArrayErweitern(geld) {
+function geldArrayErweitern() {
     geldArray[zeit] = geld;
 };
