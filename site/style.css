@@ -1,0 +1,49 @@
+body,ul,li,p,input,fieldset,legend{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1{
+  width: 100%;
+  text-align: center;
+}
+
+.clear{
+  clear: both;
+}
+
+#main-content{
+  width: 90%;
+  margin: auto;
+  height: 100%;
+}
+
+#team-info{
+  float: left;
+  width: 30%;
+  height: 100%;
+}
+
+#team-info fieldset ul li label{
+  width: 10em;
+  display: inline-block;
+  padding: 0.5em;
+}
+
+#team-info fieldset ul li input{
+  width: 15em;
+  padding: 0.5em;
+}
+
+fieldset {
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+aside{
+  float: left;
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+}

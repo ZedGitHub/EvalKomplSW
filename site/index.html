@@ -1,15 +1,57 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 	<head>
+		<meta charset="utf-8" />
 		<title>GameDeveloperGAYME</title>
 		<script src="JQmin.js"></script>
 		<script src="HC.js"></script>
 		<script src="scriptStuff.js"></script>
 		<script src="chartStuff.js"></script>
-		<!--  <link rel="stylesheet" href="style.css" type="text/css" />-->
+		<link rel="stylesheet" href="style.css" type="text/css" />
 	</head>
+
 	<body>
-		<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<h1>Game Developer GAYME</h1>
+		<section id="main-content">
+
+			<article id="team-info">
+				<fieldset>
+					<legend>Team</legend>
+					<ul>
+						<li><label for="team-number">Mitarbeiter Anzahl</label><input id="team-number" type="text"/></li>
+						<li><label for="team-skill">Mitarbeiter Skill</label><input id="team-skill" type="text"/></li>
+						<li><label for="team-health">Mitarbeiter Gesundheit</label><input id="team-health" type="text"/></li>
+						<li><label for="team-motivation">Mitarbeiter Motivation</label><input id="team-movitation" type="text"/></li>
+					</ul>
+				</fieldset>
+			</article>
+
+			<aside>
+				<article id="diagramm">
+					<fieldset>
+						<legend>Statistiken</legend>
+						<div id="container" ></div>
+					</fieldset>
+				</article>
+
+				<article id="buttons">
+					<fieldset>
+						<legend>Aktionsfelder</legend>
+							<input type="button" value="Entwickeln" onclick="entwickeln()" />
+							<input type="button" value="Beurlauben" onclick="urlaub()"/>
+							<input type="button" value="Weiterbilden" onclick="training()"/>
+							<input type="button" value="Gehaltsänderung" onclick="gehaltAendern(1)"/>
+					</fieldset>
+				</article>
+			</aside>
+			<div class="clear"/>
+
+		</section>
+
+		<script type="text/javascript">
+			// Fill values inside the team info
+			update();
+		</script>
+
 	</body>
+
 </html>

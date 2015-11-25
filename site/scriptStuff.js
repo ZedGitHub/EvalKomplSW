@@ -24,6 +24,8 @@ function entwickeln(){
     qualitaet = qualitaet + motivation * skill * entwicklungsQualiMultiplier;
     motivation = motivation - entwicklungsMotivationsReducer;
     gesundheit = gesundheit - entwicklungsGesundheitsReducer;
+
+    update();
 }
 
 function urlaub(){
@@ -31,7 +33,8 @@ function urlaub(){
     zeit = zeit - 1;
     motivation = motivation + urlaubMotivationsSchub;
     gesundheit = gesundheit + urlaubGesundheitsSchub;
-    
+
+    update();
 }
 
 function training(){
@@ -40,7 +43,8 @@ function training(){
     zeit = zeit - 1;
     motivation = motivation + trainingMotivationsSchub;
     skill = skill + trainingSkillSchub;
-    gesundheit = gesundheit - entwicklungsGesundheitsReducer; 
+    gesundheit = gesundheit - entwicklungsGesundheitsReducer;
+    update();
 }
 
 function gehaltAendern(aenderung){
@@ -57,12 +61,22 @@ function gehaltAendern(aenderung){
     geld = geld - teamgroesse * gehalt;
     zeit = zeit - 1;
     gesundheit = gesundheit - entwicklungsGesundheitsReducer;
-    
+    update();
 }
 
 function checkGesundheit(){
     if (gesundheit == 0){
-	alert("Deine Leute sind tot du Dödel");
+	alert("Deine Leute sind tot du Dödel!");
     }
+    update();
+}
 
+function update(){
+    // Fill values inside the team info
+    document.getElementById('team-number').value = teamgroesse;
+    document.getElementById('team-skill').value = skill;
+    document.getElementById('team-health').value = gesundheit;
+    document.getElementById('team-movitation').value = motivation;
+
+    initializeChart();
 }
