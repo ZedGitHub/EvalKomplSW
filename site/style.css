@@ -39,8 +39,11 @@ h1{
 }
 
 #team-info fieldset ul li input{
-  width: 13em;
+  width: 10em;
   padding: 0.5em;
+  background: white;
+  border: none;
+  border-bottom: 1px solid #CdCdCd;
 }
 
 fieldset {
@@ -84,4 +87,5 @@ aside{
   display: inline-block;
   padding: 0.5em;
   width: 5em;
+  background: white;
 }
