@@ -41,7 +41,7 @@ function urlaub() {
     zeit = zeit + 1;
     motivation = motivation + urlaubMotivationsSchub;
     gesundheit = gesundheit + urlaubGesundheitsSchub;
-    
+
     update();
     checkGeld();
     checkQualitaet();
@@ -105,12 +105,18 @@ function checkQualitaet() {
         return true
     }
 }
+
+function changeCostForTeam(){
+  gehaltAendern( parseInt(document.getElementById("value-to-show").value));
+}
+
 function update() {
     // Fill values inside the team info
     document.getElementById('team-number').value = teamgroesse;
     document.getElementById('team-skill').value = skill;
     document.getElementById('team-health').value = gesundheit;
     document.getElementById('team-movitation').value = motivation;
-    
+    document.getElementById('team-cost').value = gehalt;
+
     initializeChart();
 }

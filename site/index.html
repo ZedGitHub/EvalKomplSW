@@ -20,10 +20,11 @@
 				<fieldset>
 					<legend>Team</legend>
 					<ul>
-						<li><label for="team-number">Mitarbeiter Anzahl</label><input id="team-number" type="text"/></li>
-						<li><label for="team-skill">Mitarbeiter Skill</label><input id="team-skill" type="text"/></li>
-						<li><label for="team-health">Mitarbeiter Gesundheit</label><input id="team-health" type="text"/></li>
-						<li><label for="team-motivation">Mitarbeiter Motivation</label><input id="team-movitation" type="text"/></li>
+						<li><label for="team-number">Mitarbeiter Anzahl</label><input id="team-number" type="text"disabled/></li>
+						<li><label for="team-skill">Mitarbeiter Skill</label><input id="team-skill" type="text"disabled/></li>
+						<li><label for="team-health">Mitarbeiter Gesundheit</label><input id="team-health" type="text"disabled/></li>
+						<li><label for="team-motivation">Mitarbeiter Motivation</label><input id="team-movitation" type="text"disabled/></li>
+						<li><label for="team-cost">Mitarbeiter Gehalt</label><input id="team-cost" type="text"disabled/></li>
 					</ul>
 				</fieldset>
 			</article>
@@ -42,7 +43,9 @@
 							<input type="button" value="Entwickeln" onclick="entwickeln()" />
 							<input type="button" value="Beurlauben" onclick="urlaub()"/>
 							<input type="button" value="Weiterbilden" onclick="training()"/>
-							<input type="button" value="Gehaltsänderung" onclick="gehaltAendern(1)"/>
+							<input type="button" value="Gehaltsänderung" onclick="changeCostForTeam()"/>
+							<input id="value-to-show" type="text" value="0" disabled/>
+							<input id="value-to-show-range"type="range" value="0" min="-1000" max="1000" step="100"/>
 					</fieldset>
 				</article>
 			</aside>
@@ -51,8 +54,13 @@
 		</section>
 
 		<script type="text/javascript">
+
 			// Fill values inside the team info
 			update();
+
+			document.getElementById("value-to-show-range").oninput = function(){
+				document.getElementById("value-to-show").value = document.getElementById("value-to-show-range").value;
+			};
 		</script>
 
 	</body>
