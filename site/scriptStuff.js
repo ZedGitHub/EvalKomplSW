@@ -1,13 +1,11 @@
 var qualitaet = 0;
 var zeit = 0;
-//geld in k
-var geld = 10;
+var geld = 10000;
 var teamgroesse = 3;
 var gesundheit = 5;
 var skill = 5;
 var motivation = 5;
-//gehalt in k;
-var gehalt = 0.4;
+var gehalt = 400;
 var entwicklungsQualiMultiplier = 0.1;
 var entwicklungsMotivationsReducer = 1;
 var entwicklungsGesundheitsReducer = 1;

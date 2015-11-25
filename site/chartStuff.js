@@ -59,5 +59,5 @@ function qualitaetsArrayErweitern() {
 };
 
 function geldArrayErweitern() {
-    geldArray[zeit] = geld;
+    geldArray[zeit] = geld/1000;
 };
