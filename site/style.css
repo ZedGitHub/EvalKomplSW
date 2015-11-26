@@ -2,11 +2,12 @@
  * color 1 : #7EB6EA
  */
 
-body,ul,li,p,input,fieldset,legend{
+body,ul,li,p,input,fieldset,legend,h1{
   padding: 0;
   margin: 0;
   list-style: none;
   font-family: helvetica;
+  background: #3d3d3d;
 }
 
 h1{
@@ -22,9 +23,14 @@ h1{
   clear: both;
 }
 
+#background{
+  background: white;
+}
+
 #main-content{
   width: 90%;
   margin: auto;
+  
 }
 
 #team-info{
@@ -32,13 +38,17 @@ h1{
   width: 30%;
 }
 
+ul{background: white;}
+li{background: white;}
+
 #team-info fieldset ul li label{
   width: 11em;
   display: inline-block;
   padding: 0.5em;
+  background: white;
 }
 
-#team-info fieldset ul li input{
+#team-info fieldset ul li input[type="text"]{
   width: 10em;
   padding: 0.5em;
   background: white;
@@ -49,11 +59,13 @@ h1{
 fieldset {
   margin: 0.5em;
   padding: 0.5em;
+  background: white;
 }
 
 fieldset legend{
   color: #7EB6EA;
   font-size: 1em;
+  background: white;
 }
 
 aside{
@@ -62,7 +74,7 @@ aside{
   overflow: hidden;
 }
 
-#buttons input[type=button] {
+input[type=button] {
   border-radius: 0.5em;
   background: linear-gradient(#4d4d4d 40%,#1d1d1d 100%);
   box-shadow: #5d5d5d 3px 2px 1px inset;
@@ -74,11 +86,11 @@ aside{
   transition: border-color 250ms;
 }
 
-#buttons input[type=button]:hover {
+input[type=button]:hover {
   border:solid 1px #7EB6EA;
 }
 
-#buttons input[type=button]:active {
+input[type=button]:active {
   box-shadow: #7EB6EA 0px 0px 5px inset;
   opacity: 0.9;
 }
@@ -88,4 +100,25 @@ aside{
   padding: 0.5em;
   width: 5em;
   background: white;
+}
+
+footer{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6em;
+  border-top: solid 0.3em #7EB6EA;
+  background: linear-gradient(#1d1d1d,#3d3d3d);
+  text-align: center;
+}
+
+footer a {
+  margin: 1.5em;
+  color: pink;
+  display: block;
+}
+
+#container{
+  width: 100%;
 }

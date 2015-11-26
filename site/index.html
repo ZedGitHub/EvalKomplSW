@@ -14,11 +14,19 @@
 
 	<body>
 <h1>Game Developer GAYME</h1>
+<div id="background">
 		<section id="main-content">
 
 			<article id="team-info">
 				<fieldset>
 					<legend>Team</legend>
+					<ul>
+						<li><label for="input-time">Verfügbare Zeit</label><input id="input-time" type="text"/></li>
+						<li><label for="input-money">Verfügbares Geld</label><input id="input-money" type="text"/></li>
+
+						<li><label for="submit"> </label><input id="submit" type="button" value="Übernehmen" onclick="setTimeAndMoney()"/></li>
+					</ul>
+					<hr>
 					<ul>
 						<li><label for="team-number">Mitarbeiter Anzahl</label><input id="team-number" type="text"disabled/></li>
 						<li><label for="team-skill">Mitarbeiter Skill</label><input id="team-skill" type="text"disabled/></li>
@@ -26,6 +34,10 @@
 						<li><label for="team-motivation">Mitarbeiter Motivation</label><input id="team-movitation" type="text"disabled/></li>
 						<li><label for="team-cost">Mitarbeiter Gehalt</label><input id="team-cost" type="text"disabled/></li>
 					</ul>
+					<hr>
+					<ul>
+					<li><label for="team-quality">Produktqualität</label><input id="team-quality" type="text"disabled/></li>
+				</ul>
 				</fieldset>
 			</article>
 
@@ -52,6 +64,10 @@
 			<div class="clear"/>
 
 		</section>
+</div>
+		<footer>
+			<a href="https://www.facebook.com/robert.zoeke?fref=ts">irgendwas Geiles!</a>
+		</footer>
 
 		<script type="text/javascript">
 

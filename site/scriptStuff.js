@@ -1,5 +1,6 @@
 var qualitaet = 0;
 var zeit = 0;
+var zeitMax = 10;
 var geld = 10000;
 var teamgroesse = 3;
 var gesundheit = 5;
@@ -28,6 +29,9 @@ function entwickeln() {
         }
     } else {
         alert("Fast tote Leute entwickeln nicht, DU DÖDEL!");
+        zeit = zeit + 1;
+        geld = geld - teamgroesse * gehalt;
+        motivation = motivation - entwicklungsMotivationsReducer;
     }
     update();
     checkGeld();
@@ -108,7 +112,19 @@ function changeCostForTeam(){
   gehaltAendern( parseInt(document.getElementById("value-to-show").value));
 }
 
+function setTimeAndMoney(){
+  zeitMax = parseInt(document.getElementById('input-time').value);
+  geld = parseInt(document.getElementById('input-money').value);
+}
+
+
+
 function update() {
+    // Fill default values inside the start editables
+    document.getElementById('input-time').value = (zeitMax - zeit);
+    document.getElementById('input-money').value = geld;
+    document.getElementById('team-quality').value = qualitaet;
+
     // Fill values inside the team info
     document.getElementById('team-number').value = teamgroesse;
     document.getElementById('team-skill').value = skill;
@@ -117,4 +133,9 @@ function update() {
     document.getElementById('team-cost').value = gehalt;
 
     initializeChart();
+
+    if(zeit === zeitMax){
+      alert('Zeit ist abgelaufen du Dödel!');
+      location.reload();
+    }
 }
