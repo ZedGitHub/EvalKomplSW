@@ -17,6 +17,7 @@ var trainingSkillSchub = 0.5;
 var sinkendesGehaltMotivationsReducer = 0.5;
 var steigendesGehaltMotivationsErhoeher = 0.5;
 
+var test = false;
 
 function entwickeln() {
     if (checkGesundheit()) {
@@ -28,7 +29,10 @@ function entwickeln() {
             zeit = zeit + 1;
         }
     } else {
+
+        if(test === false)
         alert("Fast tote Leute entwickeln nicht, DU DÖDEL!");
+
         zeit = zeit + 1;
         geld = geld - teamgroesse * gehalt;
         motivation = motivation - entwicklungsMotivationsReducer;
@@ -57,7 +61,9 @@ function training() {
         skill = skill + trainingSkillSchub;
         gesundheit = gesundheit - entwicklungsGesundheitsReducer;
     } else {
-        alert('Deine Leute verweigern die Arbeit, weil sie fast Tot sind, DU DÖDEL!!!')
+        if(test === false){
+          alert('Deine Leute verweigern die Arbeit, weil sie fast Tot sind, DU DÖDEL!!!')
+        }
     }
     update();
     checkGeld();
@@ -91,8 +97,11 @@ function checkGesundheit() {
 }
 function checkGeld() {
     if (geld <= 0) {
-        alert("Kein Geld mehr du Dödel! VERLOREN");
-        location.reload();
+
+        if(test === false){
+          alert("Kein Geld mehr du Dödel! VERLOREN");
+          location.reload();
+        }
         return false;
     } else {
         return true
@@ -100,8 +109,11 @@ function checkGeld() {
 }
 function checkQualitaet() {
     if (qualitaet >= 10) {
-        alert("Qualitaet erreicht du Dödel! GEWONNEN!");
-        location.reload();
+
+        if(test === false){
+          alert("Qualitaet erreicht du Dödel! GEWONNEN!");
+          location.reload();
+        }
         return false;
     } else {
         return true
@@ -117,9 +129,21 @@ function setTimeAndMoney(){
   geld = parseInt(document.getElementById('input-money').value);
 }
 
+function checkZeit(){
+  if(zeit === zeitMax){
 
+      return false;
+  }
+  else{
+    return true;
+  }
+}
 
 function update() {
+
+  if(test === false )
+  {
+
     // Fill default values inside the start editables
     document.getElementById('input-time').value = (zeitMax - zeit);
     document.getElementById('input-money').value = geld;
@@ -133,9 +157,14 @@ function update() {
     document.getElementById('team-cost').value = gehalt;
 
     initializeChart();
+  }
 
-    if(zeit === zeitMax){
-      alert('Zeit ist abgelaufen du Dödel!');
-      location.reload();
+      if(test === false)
+      {
+        if(checkZeit() === false){
+        alert('Zeit ist abgelaufen du Dödel!');
+
+        location.reload();
+      }
     }
 }
